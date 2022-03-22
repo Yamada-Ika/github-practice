@@ -17,4 +17,5 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - run: go test -v
       - run: echo "🍏 This job's status is ${{ job.status }}."
