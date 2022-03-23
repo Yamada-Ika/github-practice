@@ -4,11 +4,20 @@ on:
       - main
 
 jobs:
-  norminette_job:
-    runs-on: ubuntu-latest
-    name: norminette
-    steps:
-    - uses: actions/checkout@v2
-    - uses: Yamada-Ika/norminette-action@v3
-      with:
-        flags: '.'
+  use-reusable-workflow:
+    # runs-onの指定は不要
+    # reusable workflowがあるorganiztion名/リポジトリ名/workflowまでのpath@ref で記述
+    # refは一意に特定できるものならok(tag, branch, commit hashなど)
+    uses: Yamada-Ika/norminette-action/.github/workflows/reusable.yml@main
+    with:
+      name: '.'
+
+# jobs:
+#   norminette_job:
+#     runs-on: ubuntu-latest
+#     name: norminette
+#     steps:
+#     - uses: actions/checkout@v2
+#     - uses: Yamada-Ika/norminette-action@v3
+#       with:
+#         flags: '.'
