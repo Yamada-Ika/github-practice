@@ -9,6 +9,6 @@ jobs:
     name: norminette
     steps:
     - uses: actions/checkout@v2
-    - uses: Yamada-Ika/norminette-action
+    - uses: Yamada-Ika/norminette-action@3.3.2
       with:
         flags: '.'
